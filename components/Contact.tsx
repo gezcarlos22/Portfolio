@@ -7,6 +7,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "./ui/textarea";
+import Image from "next/image";
 
 export function SignupFormDemo() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -95,9 +96,11 @@ export function SignupFormDemo() {
 
         <div className="flex flex-col items-center justify-center shadow-input w-full rounded-none md:rounded-2xl gap-4 ">
           <div className="overflow-hidden rounded-3xl rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6 flex flex-col justify-between h-full">
-            <img
-              src="./AboutMe/perfil.jpg"
+            <Image
+              src="/AboutMe/perfil.jpg"
               alt="perfile"
+              width={400}
+              height={400}
               className="size-100 rounded-2xl"
             />
           </div>
@@ -105,7 +108,13 @@ export function SignupFormDemo() {
           <div className="flex flex-col justify-between h-full w-full overflow-hidden rounded-3xl rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6">
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
               <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
-                <img className="w-[80%]" src="./Icons/email.png" alt="email" />
+                <Image
+                  className="w-[80%]"
+                  src="/Icons/email.png"
+                  alt="email"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div>
                 <p className="text-xl font-bold text-white line-clamp-2">
@@ -119,7 +128,13 @@ export function SignupFormDemo() {
 
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
               <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
-                <img className="w-[80%]" src="./Icons/phone.png" alt="email" />
+                <Image
+                  className="w-[80%]"
+                  src="/Icons/phone.png"
+                  alt="email"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div>
                 <p className="text-xl font-bold text-white line-clamp-2">
@@ -133,7 +148,13 @@ export function SignupFormDemo() {
 
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
               <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
-                <img className="w-[80%]" src="./Icons/area.png" alt="email" />
+                <Image
+                  className="w-[80%]"
+                  src="/Icons/area.png"
+                  alt="email"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div>
                 <p className="text-xl font-bold text-white line-clamp-2">

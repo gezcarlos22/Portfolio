@@ -1,13 +1,16 @@
 import { socialMedia } from "@/data";
+import Image from "next/image";
 
 const FooterClean = () => {
   return (
     <footer className="w-full pb-10" id="contact">
       {/* background grid */}
       <div className="w-full absolute">
-        <img
+        <Image
           src="/footer-grid.svg"
           alt="grid"
+          width={1920}
+          height={200}
           className="w-full h-full opacity-50 "
         />
       </div>
@@ -23,7 +26,7 @@ const FooterClean = () => {
               key={info.id}
               className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
             >
-              <img src={info.img} alt="icons" width={20} height={20} />
+              <Image src={info.img} alt="icons" width={20} height={20} />
             </div>
           ))}
         </div>

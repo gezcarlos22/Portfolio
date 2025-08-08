@@ -11,16 +11,20 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
-export const FloatingNav = ({
+interface NavItem {
+  name: string;
+  link: string;
+  icon?: JSX.Element;
+}
+
+interface FloatingNavProps {
+  navItems: NavItem[];
+  className?: string;
+}
+
+export const FloatingNav: React.FC<FloatingNavProps> = ({
   navItems,
   className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(true);
@@ -28,7 +32,7 @@ export const FloatingNav = ({
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current - (scrollYProgress.getPrevious() || 0);
       if (scrollYProgress.get() < 0.05) {
         setVisible(true);
       } else {
@@ -73,7 +77,7 @@ export const FloatingNav = ({
           <div className="flex space-x-6">
             {navItems.map((navItem, idx) => (
               <Link
-                key={`link-${idx}`}
+                key={`link-${idx}-${navItem.name}`} // Cambiado a clave más única
                 href={navItem.link}
                 className="relative text-neutral-50 items-center flex space-x-1 hover:text-neutral-300"
               >
@@ -95,7 +99,11 @@ export const FloatingNav = ({
 
         {/* Botón hamburguesa - solo en sm */}
         <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)} className="text-white">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -116,7 +124,7 @@ export const FloatingNav = ({
         >
           {navItems.map((navItem, idx) => (
             <Link
-              key={`mobile-link-${idx}`}
+              key={`mobile-link-${idx}-${navItem.name}`} // Cambiado a clave más única
               href={navItem.link}
               onClick={() => setMenuOpen(false)}
               className="text-white text-lg hover:text-neutral-300"

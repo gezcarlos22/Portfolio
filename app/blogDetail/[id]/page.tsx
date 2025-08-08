@@ -1,17 +1,17 @@
-"use client";
-
 import { navItems } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
 import HeroBlogDetail from "@/components/HeroBlogDetail";
+import { PageProps } from "@/.next/types/app/layout";
+import { NextPage } from "next";
 
-interface PageBlogDetailProps {
+interface PageBlogDetailProps extends PageProps {
   params: {
     id: string;
-  };
+  } & Awaited<PageProps["params"]>; // Asegura compatibilidad con Promise
 }
 
-const PageBlogDetail = ({ params }: PageBlogDetailProps) => {
+export default async function PageBlogDetail({ params }: PageBlogDetailProps) {
   const { id } = params;
 
   return (
@@ -25,6 +25,4 @@ const PageBlogDetail = ({ params }: PageBlogDetailProps) => {
       </div>
     </main>
   );
-};
-
-export default PageBlogDetail;
+}

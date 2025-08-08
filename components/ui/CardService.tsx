@@ -1,6 +1,7 @@
 import { serviceData } from "@/data";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
 
 const CardService = () => {
   return (
@@ -15,14 +16,18 @@ const CardService = () => {
               <div>
                 <div className="relative mb-4">
                   <div className="flex justify-center items-center w-20 h-20 bg-white rounded-2xl">
-                    <img className="w-[80%]" src={post.icon} alt={post.title} />
+                    <Image
+                      className="w-[80%]"
+                      src={post.icon}
+                      alt={post.title}
+                      width={64}
+                      height={64}
+                    />
                   </div>
                 </div>
                 <p className="mt-2 text-xl font-bold text-white line-clamp-2">
-                  <a href="#service" title="">
-                    {post.title}
-                    {post.title2}
-                  </a>
+                  {post.title}
+                  {post.title2}
                 </p>
                 <p className="mt-4 text-lg text-[#BEC1DD]">
                   {post.description}

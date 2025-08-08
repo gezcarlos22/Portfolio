@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type Tab = {
   title: string;
@@ -292,10 +293,13 @@ const TabImageContent = ({ text, image }: { text: string; image: string }) => {
         </p>
       </div>
       <div className="flex-grow relative">
-        <img
+        <Image
           src={image}
           alt="tab content"
+          fill
           className="absolute inset-0 w-full h-full object-cover object-center rounded-b-2xl"
+          sizes="(max-width: 768px) 100vw, 700px"
+          priority
         />
       </div>
     </div>

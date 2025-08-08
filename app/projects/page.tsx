@@ -1,5 +1,3 @@
-"use client";
-
 import { heroProyects, navItems, projects } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
@@ -7,7 +5,7 @@ import HeroProyects from "@/components/HeroProjects";
 import CarouselWrapper from "@/components/ui/CarouselProject";
 import Title from "@/components/ui/Title";
 
-const Projects = () => {
+export default async function PageProjects() {
   return (
     <main className="relative bg-black-100 flex flex-col items-center overflow-hidden mx-auto min-h-screen">
       <div className="w-full max-w-7xl sm:px-10 px-5">
@@ -32,6 +30,4 @@ const Projects = () => {
       </div>
     </main>
   );
-};
-
-export default Projects;
+}

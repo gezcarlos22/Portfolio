@@ -1,4 +1,5 @@
 import { blogPosts, serviceData } from "@/data";
+import Image from "next/image";
 
 interface HeroProyectDetailProps {
   postId: string;
@@ -27,10 +28,13 @@ const HeroProyectDetail = ({ postId }: HeroProyectDetailProps) => {
       <div className="mx-auto mt-8 grid max-w-md grid-cols-1 gap-6 md:grid-cols-1 lg:mt-10 lg:max-w-full lg:grid-cols-1">
         <div className="overflow-hidden rounded-3xl rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6 flex flex-col justify-between h-full">
           <div className="relative">
-            <img
+            <Image
               className="w-full h-full object-cover rounded-2xl"
               src={post.img}
               alt={post.title}
+              width={800}
+              height={450}
+              layout="responsive"
             />
           </div>
         </div>

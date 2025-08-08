@@ -1,6 +1,7 @@
 import { blogPosts } from "@/data";
 import Link from "next/link";
 import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
 
 const CardBlog = () => {
   return (
@@ -19,10 +20,13 @@ const CardBlog = () => {
               >
                 <div>
                   <div className="relative mb-4">
-                    <img
+                    <Image
                       className="w-full h-full object-cover rounded-2xl"
                       src={post.img}
                       alt={post.title}
+                      width={400}
+                      height={250}
+                      style={{ width: "100%", height: "auto" }}
                     />
 
                     <div className="absolute left-4 top-4">
@@ -35,9 +39,7 @@ const CardBlog = () => {
                     {post.date}
                   </span>
                   <p className="mt-2 text-xl font-bold text-white line-clamp-2">
-                    <a href="#" title="">
-                      {post.title}
-                    </a>
+                    {post.title}
                   </p>
                   <p className="mt-4 text-lg text-[#BEC1DD] line-clamp-3">
                     {post.description}

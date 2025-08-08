@@ -4,6 +4,7 @@ import { useState, useRef, useId, useEffect } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
 import Link from "next/link";
 import { projects2 } from "@/data";
+import Image from "next/image";
 
 interface SlideData {
   title: string;
@@ -96,16 +97,19 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             }}
           >
             <div className="relative w-full h-full overflow-hidden lg:rounded-3xl">
-              <img
+              <Image
                 className="relative lg:absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
                 style={{
                   opacity: current === index ? 1 : 0.2,
                 }}
                 alt={title}
                 src={img}
-                onLoad={imageLoaded}
-                loading="eager"
-                decoding="sync"
+                onLoadingComplete={(imgEl) => {
+                  imgEl.style.opacity = "1";
+                }}
+                fill
+                priority
+                sizes="(max-width: 1024px) 120vw, 120vw"
               />
               {current === index && (
                 <div className="absolute inset-0 transition-all duration-1000" />
@@ -142,10 +146,13 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img
+                      <Image
                         src={icon}
                         alt={`${title} icon ${index}`}
                         className="p-2"
+                        width={32}
+                        height={32}
+                        unoptimized
                       />
                     </div>
                   ))}

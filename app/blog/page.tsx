@@ -1,5 +1,3 @@
-"use client";
-
 import { blogPosts, navItems } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
@@ -8,7 +6,7 @@ import Title from "@/components/ui/Title";
 import { CarouselBlog } from "@/components/ui/CarouselBlog";
 import HeroTitle from "@/components/HeroTitle";
 
-const Blog = () => {
+export default async function PageBlog() {
   return (
     <main className="relative bg-black-100 flex flex-col items-center overflow-hidden mx-auto min-h-screen">
       <div className="w-full max-w-7xl sm:px-10 px-5">
@@ -21,6 +19,4 @@ const Blog = () => {
       </div>
     </main>
   );
-};
-
-export default Blog;
+}

@@ -4,6 +4,7 @@ import { useState, useRef, useId, useEffect } from "react";
 import MagicButton from "../MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SlideData {
   title: string;
@@ -93,16 +94,16 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 : "none",
           }}
         >
-          <img
+          <Image
             className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0.1,
             }}
             alt={title}
             src={img}
+            fill
             onLoad={imageLoaded}
-            loading="eager"
-            decoding="sync"
+            priority
           />
           {current === index && (
             <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />

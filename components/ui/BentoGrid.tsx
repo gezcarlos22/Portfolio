@@ -1,13 +1,14 @@
+"use client";
+
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-
+import Image from "next/image";
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
-import GridGlobe from "./GridGlobe";
 import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
 
@@ -36,7 +37,6 @@ export const BentoGridItem = ({
   id,
   title,
   description,
-  //   remove unecessary things here
   img,
   imgClassName,
   titleClassName,
@@ -90,10 +90,13 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
               src={img}
               alt={img}
               className={cn(imgClassName, "object-cover object-center ")}
+              fill
+              sizes="100vw"
+              priority={id === 1}
             />
           )}
         </div>
@@ -103,11 +106,13 @@ export const BentoGridItem = ({
           } `}
         >
           {spareImg && (
-            <img
+            <Image
               src={spareImg}
               alt={spareImg}
-              //   width={220}
               className="object-cover object-center w-full h-full"
+              fill
+              sizes="100vw"
+              priority={id === 1}
             />
           )}
         </div>
@@ -137,7 +142,7 @@ export const BentoGridItem = ({
           </div>
 
           {/* for the github 3d globe */}
-          {id === 2 && <GridGlobe />}
+          {id === 2}
 
           {/* Tech stack list div */}
           {id === 3 && (
@@ -198,3 +203,5 @@ export const BentoGridItem = ({
     </div>
   );
 };
+
+export default BentoGrid;

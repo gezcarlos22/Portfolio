@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface PropsButtonContact {
   imageSrc: string;
@@ -70,9 +71,11 @@ const ButtonContact = ({ imageSrc, name, designation }: PropsButtonContact) => {
         />
 
         <span className="relative z-10 inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950/90 px-3 py-1 text-sm font-medium text-white backdrop-blur-md transition-all duration-300 group-hover:bg-slate-950/80">
-          <img
+          <Image
             src={imageSrc}
             alt={name}
+            width={40}
+            height={40}
             className="h-10 w-10 transition-all duration-300 group-hover:scale-110 group-hover:brightness-125"
           />
         </span>

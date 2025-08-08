@@ -1,17 +1,18 @@
-"use client";
-
 import { navItems } from "@/data";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import Footer from "@/components/Footer";
 import HeroProyectDetail from "@/components/HeroProjectDetail";
+import { PageProps } from "@/.next/types/app/layout";
 
 interface PageProjectDetailProps {
   params: {
     id: string;
-  };
+  } & Awaited<PageProps["params"]>;
 }
 
-const PageProjectDetail = ({ params }: PageProjectDetailProps) => {
+export default async function PageProjectDetail({
+  params,
+}: PageProjectDetailProps) {
   const { id } = params;
 
   return (
@@ -25,6 +26,4 @@ const PageProjectDetail = ({ params }: PageProjectDetailProps) => {
       </div>
     </main>
   );
-};
-
-export default PageProjectDetail;
+}
