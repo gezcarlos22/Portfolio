@@ -127,7 +127,7 @@ export function SignupFormDemo() {
             </div>
 
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
-              <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
+              <div className="flex flex-row justify-center items-center w-8 h-8 md:w-16 md:h-16 bg-purple rounded-2xl">
                 <Image
                   className="w-[80%]"
                   src="/Icons/phone.png"

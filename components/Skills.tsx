@@ -11,7 +11,7 @@ const Skills = () => {
         <span className="text-purple">Soft & Hard Skills</span>
       </h1>
 
-      <div className="w-full mt-12 grid lg:grid-cols-6 grid-cols-3 gap-10">
+      <div className="w-full mt-12 grid lg:grid-cols-6 grid-cols-3 gap-4 md:gap-10">
         {hardSkills.map((card) => (
           <Button2
             key={card.id}

@@ -634,6 +634,21 @@ export const projects2 = [
         ],
         link: "https://github.com/gezcarlos22/Literatura",
       },
+      {
+        id: "3",
+        title: "ForoHub - Forum Platform REST API",
+        title2: "Foro Hub",
+        des: "Designed to manage users, topics, and replies in an online forum environment in a secure, scalable, and efficient manner.",
+        img: "/Projects/back_end/foro_hub.jpg",
+        category: "Back End",
+        iconLists: [
+          "/HardSkills/java.svg",
+          "/HardSkills/spring.svg",
+          "/HardSkills/Mysql.svg",
+          "/HardSkills/intellij.svg",
+        ],
+        link: "https://github.com/gezcarlos22/ForoHub",
+      },
     ],
 
     frontEnd: [

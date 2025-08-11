@@ -16,7 +16,7 @@ const About = () => {
         <FloatingNav navItems={navItems} />
         <HeroTitle title="My passion: turning ideas into digital experiences." />
         <AnimatedTestimonials testimonials={dataTestimonials} />
-        <div className="flex item-center justify-center gap-10">
+        <div className="flex w-full item-center justify-center gap-4 md:gap-10">
           {socialMedia.map((social, index) => (
             <ButtonContact
               key={index}
