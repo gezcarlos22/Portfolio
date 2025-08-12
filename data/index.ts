@@ -644,7 +644,7 @@ export const projects2 = [
         iconLists: [
           "/HardSkills/java.svg",
           "/HardSkills/spring.svg",
-          "/HardSkills/Mysql.svg",
+          "/HardSkills/mysql.svg",
           "/HardSkills/intellij.svg",
         ],
         link: "https://github.com/gezcarlos22/ForoHub",
