@@ -76,7 +76,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[140vmin] lg:w-[120vmin] md:h-[100vmin] lg:h-[50vmin] mx-[4vmin] z-10 "
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[140vmin] lg:w-[120vmin] md:h-[70vmin] lg:h-[50vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -89,16 +89,16 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           transformOrigin: "bottom",
         }}
       >
-        <Link href={slide.link} target="_blank">
+        <Link href={slide.link} target="_blank" className="h-full ">
           <div
             className="card-zoom-animation overflow-hidden rounded-3xl rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6 flex flex-col lg:flex-row h-full gap-6"
             style={{
               opacity: current === index ? 1 : 0.2,
             }}
           >
-            <div className="relative w-full h-full overflow-hidden lg:rounded-3xl">
+            <div className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl">
               <Image
-                className="relative lg:absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+                className="inset-0 w-[100%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
                 style={{
                   opacity: current === index ? 1 : 0.2,
                 }}
@@ -136,7 +136,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 {des}
               </p>
 
-              <div className="flex items-center items-center justify-between m-3">
+              <div className="flex items-center items-center justify-between m-3 flex-col md:flex-row">
                 <div className="flex items-center">
                   {iconLists.map((icon, index) => (
                     <div
@@ -224,7 +224,7 @@ export function CarouselProject({ slides }: CarouselProps) {
 
   return (
     <div
-      className="relative w-[70vmin] lg:w-[120vmin] h-[140vmin] md:h-[100vmin] lg:h-[50vmin] mx-auto "
+      className="relative w-[70vmin] lg:w-[120vmin] h-[140vmin] md:h-[70vmin] lg:h-[50vmin] mx-auto "
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul
