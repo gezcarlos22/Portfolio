@@ -602,6 +602,26 @@ export const projects2 = [
         ],
         link: "https://www.behance.net/gallery/214779655/Calm-Connect-Desing-System-Atomic-Desing",
       },
+      {
+        id: "5",
+        title: "Website - Landing Page | Travel.com",
+        title2: "Travel.com",
+        des: "The navigation flow was optimized for an intuitive experience, and a visually clean and modern interface was designed for the website.",
+        img: "/Projects/ux_ui/TravelComputerPortada.png",
+        category: "UX/UI Design",
+        iconLists: ["/HardSkills/figma.svg", "/HardSkills/photoshop.svg"],
+        link: "https://www.behance.net/gallery/232474031/Website-Landing-Page-Travelcom",
+      },
+      {
+        id: "6",
+        title: "Website Mobile | Travel.com",
+        title2: "Travel.com",
+        des: "Focusing on usability, navigation has been simplified and the touch interface adapted to offer a fluid experience on any device.",
+        img: "/Projects/ux_ui/TravelMobilePortada.png",
+        category: "UX/UI Design",
+        iconLists: ["/HardSkills/figma.svg", "/HardSkills/photoshop.svg"],
+        link: "https://www.behance.net/gallery/232476081/Mobile-Website-Travelcom",
+      },
     ],
 
     backEnd: [
@@ -654,6 +674,21 @@ export const projects2 = [
     frontEnd: [
       {
         id: "1",
+        title: "Travel.com",
+        title2: "Travel.com",
+        des: "This project showcases a responsive website developed with modern front-end technologies, ensuring a fluid and optimized interface for any device.",
+        category: "Front End",
+        img: "/Projects/front_end/travel.png",
+        iconLists: [
+          "/HardSkills/html-5.svg",
+          "/HardSkills/css.svg",
+          "/HardSkills/javascript.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://gezcarlos22.github.io/Travel.com/",
+      },
+      {
+        id: "2",
         title: "Basic Calculator",
         title2: "Basic Calculator",
         des: "Discover this handy math tool I developed to test my web programming knowledge. It's a functional calculator you can try right in your browser.",
@@ -665,10 +700,10 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22/Calculadora",
+        link: "https://github.com/gezcarlos22.github.io/Calculadora/",
       },
       {
-        id: "2",
+        id: "3",
         title: "Numero Secreto",
         title2: "Numero Secreto",
         des: "El objetivo del juego es adivinar un número aleatorio generado por la computadora dentro de un número limitado de intentos.",
@@ -680,10 +715,10 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22/Numero_Secreto",
+        link: "https://github.com/gezcarlos22.github.io/Numero_Secreto/",
       },
       {
-        id: "3",
+        id: "4",
         title: "Amigo Secreto",
         title2: "Amigo Secreto",
         des: "Los usuarios pueden ingresar una lista de nombres y la aplicación se encargará de asignar aleatoriamente un amigo secreto a cada persona.",
@@ -695,7 +730,7 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22/Amigo_Secreto",
+        link: "https://github.com/gezcarlos22.github.io/Amigo_Secreto/",
       },
     ],
     appMobile: [
