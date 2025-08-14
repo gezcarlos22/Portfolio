@@ -700,7 +700,7 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22.github.io/Calculadora/",
+        link: "https://gezcarlos22.github.io/Calculadora/",
       },
       {
         id: "3",
@@ -715,7 +715,7 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22.github.io/Numero_Secreto/",
+        link: "https://gezcarlos22.github.io/Numero_Secreto/",
       },
       {
         id: "4",
@@ -730,7 +730,7 @@ export const projects2 = [
           "/HardSkills/javascript.svg",
           "/HardSkills/visual_studio_code.svg",
         ],
-        link: "https://github.com/gezcarlos22.github.io/Amigo_Secreto/",
+        link: "https://gezcarlos22.github.io/Amigo_Secreto/",
       },
     ],
     appMobile: [
