@@ -5,7 +5,7 @@ const HeroService = () => {
   return (
     <section className="pt-10">
       {/* Contenedor principal sin limitación de ancho */}
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto">
         {serviceData.map((service, index) => (
           <div key={service.id} className="mb-20 space-y-12 w-full">
             {/* Contenedor del servicio principal */}
@@ -15,7 +15,7 @@ const HeroService = () => {
               } gap-6`}
             >
               {/* Div de la imagen (mantenemos el ancho mitad) */}
-              <div className="overflow-hidden rounded-3xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 p-2 flex flex-col justify-between h-full w-full lg:w-1/2 lg:p-6">
+              <div className="overflow-hidden rounded-3xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 p-4 flex flex-col justify-between h-full w-full lg:w-1/2 lg:p-6">
                 <div className="relative">
                   <Image
                     className="w-full h-full object-cover rounded-2xl"

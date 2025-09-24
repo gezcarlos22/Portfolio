@@ -25,7 +25,7 @@ export default async function PageProjects() {
         <Title title="Projects " title2="App Mobile" />
         <CarouselWrapper type="appMobile" />
       </div>
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-7xl px-5 sm:px-10">
         <Footer />
       </div>
     </main>

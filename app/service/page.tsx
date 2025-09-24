@@ -12,7 +12,7 @@ export default async function PageService() {
         <HeroTitle title="Turning creative vision into digital value" />
         <HeroService />
       </div>
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-7xl px-5 sm:px-10">
         <Footer />
       </div>
     </main>

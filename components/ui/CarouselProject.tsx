@@ -76,7 +76,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
       <li
         ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[140vmin] lg:w-[120vmin] md:h-[70vmin] lg:h-[50vmin] mx-[4vmin] z-10 "
+        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[90vmin] h-[140vmin] lg:w-[120vmin] md:h-[70vmin] lg:h-[50vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -127,7 +127,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
               </h1>
 
               <p
-                className="lg:text-xl lg:font-normal font-light text-sm m-3"
+                className="text-sm lg:text-md lg:font-normal font-light m-3"
                 style={{
                   color: "#BEC1DD",
                   margin: "1vh 0",
@@ -136,7 +136,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 {des}
               </p>
 
-              <div className="flex items-center items-center justify-between m-3 flex-col md:flex-row">
+              <div className="flex items-center items-center justify-between m-3 flex-col gap-2 md:flex-row">
                 <div className="flex items-center">
                   {iconLists.map((icon, index) => (
                     <div
@@ -159,7 +159,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                  <p className="flex lg:text-l md:text-s text-m text-purple">
+                  <p className="flex text-xs text-purple">
                     Check out this project
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
@@ -224,7 +224,7 @@ export function CarouselProject({ slides }: CarouselProps) {
 
   return (
     <div
-      className="relative w-[70vmin] lg:w-[120vmin] h-[140vmin] md:h-[70vmin] lg:h-[50vmin] mx-auto "
+      className="relative w-[90vmin] lg:w-[120vmin] h-[140vmin] md:h-[70vmin] lg:h-[50vmin] mx-auto "
       aria-labelledby={`carousel-heading-${id}`}
     >
       <ul

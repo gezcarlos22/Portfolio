@@ -11,18 +11,46 @@ import Title from "@/components/ui/Title";
 
 export default async function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
+    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto px-5 sm:px-10 ">
       <div className="max-w-7xl w-full">
         <FloatingNav navItems={navItems} />
         <Hero />
         <Grid />
-        <Title title="My Work " title2="Experience" />
+        <Title
+          title="My Work "
+          title2="Experience"
+          button={true}
+          titlebutton="See all about me"
+          positionButton="right"
+          link="/about"
+        />
         <Experience />
-        <Title title="A small selection of " title2="recent projects" />
+        <Title
+          title="A small selection of "
+          title2="recent projects"
+          button={true}
+          titlebutton="See all projects"
+          positionButton="right"
+          link="/projects"
+        />
         <RecentProjects />
-        <Title title="My " title2="Services" />
+        <Title
+          title="My "
+          title2="Services"
+          button={true}
+          titlebutton="See all services"
+          positionButton="right"
+          link="/service"
+        />
         <CardService />
-        <Title title="My Article" title2="Blog" />
+        <Title
+          title="My Article"
+          title2="Blog"
+          button={true}
+          titlebutton="See all blogs"
+          positionButton="right"
+          link="/blog"
+        />
         <CardBlog />
         <Footer />
       </div>

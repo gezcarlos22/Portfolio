@@ -56,7 +56,7 @@ export const gridItems = [
       "Where my code and design ignite inspiration, and your coding journey can begin",
     description: "My blog:",
     className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60 opacity-25",
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
     spareImg: "/grid.svg",
@@ -547,6 +547,20 @@ export const projects2 = [
   {
     desing: [
       {
+        id: "0",
+        title: "Lion Studio",
+        title2: "Lion Studio",
+        des: "Its design has been carefully crafted to allow artists and clients to explore services, listen to portfolios, and request collaborations, offering a seamless and professional experience from any device.",
+        category: "UX/UI Design",
+        img: "/Projects/ux_ui/img_lion_studio.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/photoshop.svg",
+          "/HardSkills/adobe_i.svg",
+        ],
+        link: "https://www.behance.net/gallery/235230811/Lion-Studio-Website-Design",
+      },
+      {
         id: "1",
         title: "Mappeando",
         title2: "Mappeando",
@@ -672,6 +686,21 @@ export const projects2 = [
     ],
 
     frontEnd: [
+      {
+        id: "0",
+        title: "Lion Studio",
+        title2: "Lion Studio",
+        des: "This project presents the website for Lion Studio, a music production company. Developed with modern front-end technologies, the site offers a responsive and optimized interface.",
+        category: "Front End",
+        img: "/Projects/front_end/lion_studio.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/react.svg",
+          "/HardSkills/nextjs.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://lion-studio.vercel.app/",
+      },
       {
         id: "1",
         title: "Travel.com",

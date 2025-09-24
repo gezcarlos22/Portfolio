@@ -105,9 +105,9 @@ export function SignupFormDemo() {
             />
           </div>
 
-          <div className="flex flex-col justify-between h-full w-full overflow-hidden rounded-3xl rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6">
+          <div className="flex flex-col justify-center h-full w-full overflow-hidden rounded-3xl rounded-2xl  shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6">
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
-              <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
+              <div className="relative flex justify-center items-center w-14 h-14 md:w-16 md:h-16 bg-purple rounded-2xl p-2">
                 <Image
                   className="w-[80%]"
                   src="/Icons/email.png"
@@ -117,51 +117,51 @@ export function SignupFormDemo() {
                 />
               </div>
               <div>
-                <p className="text-xl font-bold text-white line-clamp-2">
+                <p className="text-lg md:text-xl font-bold text-white line-clamp-2">
                   Email
                 </p>
-                <p className="mt-1 text-base text-[#BEC1DD] line-clamp-3">
+                <p className="mt-1 text-sm md:text-base text-[#BEC1DD] line-clamp-3">
                   gez.carlos.98@gmail.com
                 </p>
               </div>
             </div>
 
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
-              <div className="flex flex-row justify-center items-center w-8 h-8 md:w-16 md:h-16 bg-purple rounded-2xl">
+              <div className="relative flex flex-row justify-center items-center w-14 h-14 md:w-16 md:h-16 bg-purple rounded-2xl p-2">
                 <Image
                   className="w-[80%]"
                   src="/Icons/phone.png"
-                  alt="email"
+                  alt="phone"
                   width={40}
                   height={40}
                 />
               </div>
               <div>
-                <p className="text-xl font-bold text-white line-clamp-2">
+                <p className="text-lg md:text-xl font-bold text-white line-clamp-2">
                   Phone
                 </p>
-                <p className="mt-1 text-base text-[#BEC1DD] line-clamp-3">
+                <p className="mt-1 text-sm md:text-base text-[#BEC1DD] line-clamp-3">
                   +54 3544 464242
                 </p>
               </div>
             </div>
 
             <div className="flex flex-row justify-start items-center relative mb-4 gap-10">
-              <div className="flex flex-row justify-center items-center w-16 h-16 bg-purple rounded-2xl">
+              <div className="relative flex flex-row justify-center items-center w-14 h-14 md:w-16 md:h-16 bg-purple rounded-2xl md:p-2">
                 <Image
                   className="w-[80%]"
                   src="/Icons/area.png"
-                  alt="email"
+                  alt="area"
                   width={40}
                   height={40}
                 />
               </div>
               <div>
-                <p className="text-xl font-bold text-white line-clamp-2">
+                <p className="text-lg md:text-xl font-bold text-white line-clamp-2">
                   Address
                 </p>
-                <p className="mt-1 text-base text-[#BEC1DD] line-clamp-3">
-                  General Artigas, Cordoba, Argentina
+                <p className="mt-1 text-sm md:text-base text-[#BEC1DD] line-clamp-3">
+                  Cordoba, Argentina
                 </p>
               </div>
             </div>
