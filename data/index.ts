@@ -547,7 +547,49 @@ export const projects2 = [
   {
     desing: [
       {
-        id: "0",
+        id: "1",
+        title: "Clinica SePrece",
+        title2: "Clinica SePrece",
+        des: "A comprehensive clinical management system that digitizes administrative operations, allowing for detailed patient registration and tracking, and accurate inventory management.",
+        category: "UX/UI Design",
+        img: "/Projects/ux_ui/clinica.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/photoshop.svg",
+          "/HardSkills/adobe_i.svg",
+        ],
+        link: "https://www.behance.net/gallery/239289927/SePrice-Dashboard-UXUI-Design",
+      },
+      {
+        id: "2",
+        title: "Tic Tac Toe",
+        title2: "Tic Tac Toe",
+        des: "I designed the app to be minimalist and fast: I put the 3x3 board as the central focus with high contrast.",
+        category: "UX/UI Design",
+        img: "/Projects/ux_ui/tictactoe.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/photoshop.svg",
+          "/HardSkills/adobe_i.svg",
+        ],
+        link: "https://www.behance.net/gallery/239565497/Tic-Tac-Toe-App-Mobile-Design",
+      },
+      {
+        id: "3",
+        title: "Centro Deportivo",
+        title2: "Centro Deportivo",
+        des: "Complete design for the mobile application that centralizes the management of a sports center.",
+        category: "UX/UI Design",
+        img: "/Projects/ux_ui/centro_deportivo.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/photoshop.svg",
+          "/HardSkills/adobe_i.svg",
+        ],
+        link: "https://www.behance.net/gallery/235230811/Lion-Studio-Website-Design",
+      },
+      {
+        id: "4",
         title: "Lion Studio",
         title2: "Lion Studio",
         des: "Its design has been carefully crafted to allow artists and clients to explore services, listen to portfolios, and request collaborations, offering a seamless and professional experience from any device.",
@@ -561,7 +603,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/235230811/Lion-Studio-Website-Design",
       },
       {
-        id: "1",
+        id: "5",
         title: "Mappeando",
         title2: "Mappeando",
         des: "Application that allows users to choose routes within a city and obtain exact directions to take the ride shared with other people.",
@@ -575,7 +617,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/214774925/MAPPEANDO",
       },
       {
-        id: "2",
+        id: "6",
         title: "Heartbook",
         title2: "Heartbook",
         des: "Heartbook is a mobile app I designed and developed for buying and selling new and used books.",
@@ -589,7 +631,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/224370529/HeartBook-App",
       },
       {
-        id: "3",
+        id: "7",
         title: "Calm Connect",
         title2: "Calm Connect",
         des: "CalmConnect is created to provide immediate attention and thus give them the therapeutic tools so they can achieve emotional well-being.",
@@ -603,7 +645,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/202495197/Calm-Connect",
       },
       {
-        id: "4",
+        id: "8",
         title: "System Calm Connect",
         title2: "System Calm Connect",
         des: "CalmConnect's Design System is a set of visual components and guidelines that ensure consistency throughout the application.",
@@ -617,7 +659,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/214779655/Calm-Connect-Desing-System-Atomic-Desing",
       },
       {
-        id: "5",
+        id: "9",
         title: "Website - Landing Page | Travel.com",
         title2: "Travel.com",
         des: "The navigation flow was optimized for an intuitive experience, and a visually clean and modern interface was designed for the website.",
@@ -627,7 +669,7 @@ export const projects2 = [
         link: "https://www.behance.net/gallery/232474031/Website-Landing-Page-Travelcom",
       },
       {
-        id: "6",
+        id: "10",
         title: "Website Mobile | Travel.com",
         title2: "Travel.com",
         des: "Focusing on usability, navigation has been simplified and the touch interface adapted to offer a fluid experience on any device.",
@@ -765,6 +807,34 @@ export const projects2 = [
     appMobile: [
       {
         id: "1",
+        title: "Centro Deportivo",
+        title2: "Centro Deportivo",
+        des: "Comprehensive mobile app that centralizes the management of a sports center.",
+        img: "/Projects/app_mobile/centro_deportivo.png",
+        category: "APP Mobile",
+        iconLists: [
+          "/HardSkills/react.svg",
+          "/HardSkills/ts.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://github.com/gezcarlos22/HeartBook_App",
+      },
+      {
+        id: "2",
+        title: "Tic Tac Toe",
+        title2: "Tic Tac Toe",
+        des: "Game for one or two players taking turns on a 3x3 grid to try to get three of its symbols ('X' or 'O') in a line (horizontal, vertical or diagonal).",
+        img: "/Projects/app_mobile/tictactoe.png",
+        category: "APP Mobile",
+        iconLists: [
+          "/HardSkills/react.svg",
+          "/HardSkills/ts.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://github.com/gezcarlos22/ta_te_ti",
+      },
+      {
+        id: "3",
         title: "Heartbook",
         title2: "Heartbook",
         des: "Heartbook is a mobile app I designed and developed for buying and selling new and used books.",
@@ -778,7 +848,7 @@ export const projects2 = [
         link: "https://github.com/gezcarlos22/HeartBook_App",
       },
       {
-        id: "2",
+        id: "4",
         title: "Personal Card",
         title2: "Personal Card",
         des: "A personal card app that allows me to share my personal information in digital format.",
