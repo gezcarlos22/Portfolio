@@ -159,7 +159,7 @@ export const AnimatedTestimonials = ({
                   <IconArrowRight className="h-7 w-7 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
                 </button>
               </div>
-              <a href="https://drive.google.com/file/d/12XoebO5EKtYr2d7uZn2xJXmV2OPr2tvA/view?usp=sharing">
+              <a href="https://drive.google.com/file/d/1rFekrJJRgxrXQ8NyaE0nLYVLNBhqXF5C/view?usp=sharing">
                 <MagicButton
                   title="Download my CV"
                   icon={<FaLocationArrow />}

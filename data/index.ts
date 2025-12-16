@@ -678,6 +678,16 @@ export const projects2 = [
         iconLists: ["/HardSkills/figma.svg", "/HardSkills/photoshop.svg"],
         link: "https://www.behance.net/gallery/232476081/Mobile-Website-Travelcom",
       },
+      {
+        id: "11",
+        title: "Website | Gif Explorer",
+        title2: "Gif Explorer",
+        des: "Gif Explorer's grid-based design and search interactions have been carefully optimized to provide intuitive navigation on any device.",
+        img: "/Projects/ux_ui/gif-explorer.png",
+        category: "UX/UI Design",
+        iconLists: ["/HardSkills/figma.svg", "/HardSkills/photoshop.svg"],
+        link: "https://www.behance.net/gallery/240507409/Gif-Explorer-Web-Design",
+      },
     ],
 
     backEnd: [
@@ -730,6 +740,21 @@ export const projects2 = [
     frontEnd: [
       {
         id: "0",
+        title: "Cabaña Traslasierra",
+        title2: "Cabaña Traslasierra",
+        des: "This project presents the website for Cabañas Traslasierra, a luxury cabin rental service. Developed with modern front-end technologies, the site offers a responsive and optimized interface..",
+        category: "Front End",
+        img: "/Projects/front_end/cabaña.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/react.svg",
+          "/HardSkills/nextjs.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://cabana-cba.vercel.app/",
+      },
+      {
+        id: "1",
         title: "Lion Studio",
         title2: "Lion Studio",
         des: "This project presents the website for Lion Studio, a music production company. Developed with modern front-end technologies, the site offers a responsive and optimized interface.",
@@ -744,7 +769,7 @@ export const projects2 = [
         link: "https://lion-studio.vercel.app/",
       },
       {
-        id: "1",
+        id: "2",
         title: "Travel.com",
         title2: "Travel.com",
         des: "This project showcases a responsive website developed with modern front-end technologies, ensuring a fluid and optimized interface for any device.",
@@ -759,7 +784,22 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Travel.com/",
       },
       {
-        id: "2",
+        id: "3",
+        title: "Gif Explorer",
+        title2: "Gif Explorer",
+        des: "This project presents the Gif Explorer website, a dynamic search engine for animations. Developed with modern front-end technologies, the site offers a responsive and optimized interface with real-time API integration.",
+        category: "Front End",
+        img: "/Projects/front_end/gif-page.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/react.svg",
+          "/HardSkills/vite.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://gif-explorer-five.vercel.app/",
+      },
+      {
+        id: "4",
         title: "Basic Calculator",
         title2: "Basic Calculator",
         des: "Discover this handy math tool I developed to test my web programming knowledge. It's a functional calculator you can try right in your browser.",
@@ -774,7 +814,7 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Calculadora/",
       },
       {
-        id: "3",
+        id: "5",
         title: "Numero Secreto",
         title2: "Numero Secreto",
         des: "El objetivo del juego es adivinar un número aleatorio generado por la computadora dentro de un número limitado de intentos.",
@@ -789,7 +829,7 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Numero_Secreto/",
       },
       {
-        id: "4",
+        id: "6",
         title: "Amigo Secreto",
         title2: "Amigo Secreto",
         des: "Los usuarios pueden ingresar una lista de nombres y la aplicación se encargará de asignar aleatoriamente un amigo secreto a cada persona.",

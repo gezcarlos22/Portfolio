@@ -2,17 +2,56 @@
 
 import MagicButton from "./MagicButton";
 import { FaLocationArrow } from "react-icons/fa6";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "./ui/textarea";
 import Image from "next/image";
+import emailjs from '@emailjs/browser';
 
 export function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          to_email: 'gez.carlos.98@gmail.com',
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      
+      setSubmitStatus('Message sent successfully!');
+      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+    } catch (error) {
+      setSubmitStatus('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   return (
     <div>
@@ -40,7 +79,15 @@ export function SignupFormDemo() {
                   >
                     First name
                   </Label>
-                  <Input id="firstname" placeholder="Carlos" type="text" />
+                  <Input 
+                    id="firstname" 
+                    name="firstName"
+                    placeholder="Carlos" 
+                    type="text" 
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </LabelInputContainer>
                 <LabelInputContainer>
                   <Label
@@ -49,7 +96,15 @@ export function SignupFormDemo() {
                   >
                     Last name
                   </Label>
-                  <Input id="lastname" placeholder="Gez" type="text" />
+                  <Input 
+                    id="lastname" 
+                    name="lastName"
+                    placeholder="Gez" 
+                    type="text" 
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </LabelInputContainer>
               </div>
               <LabelInputContainer className="mb-4">
@@ -61,8 +116,12 @@ export function SignupFormDemo() {
                 </Label>
                 <Input
                   id="email"
+                  name="email"
                   placeholder="EmailAddress@.com"
                   type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                 />
               </LabelInputContainer>
               <LabelInputContainer className="mb-4">
@@ -74,21 +133,31 @@ export function SignupFormDemo() {
                 </Label>
                 <Textarea
                   id="textarea"
+                  name="message"
                   placeholder="Leave me a message"
                   rows={4}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                 />
               </LabelInputContainer>
 
               <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
 
+              {submitStatus && (
+                <div className={`text-center mb-4 ${submitStatus.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}>
+                  {submitStatus}
+                </div>
+              )}
+
               <div className="mt-10 flex items-center justify-center">
-                <a href="/contact">
-                  <MagicButton
-                    title="Lest talk"
-                    icon={<FaLocationArrow />}
-                    position="right"
-                  />
-                </a>
+                <MagicButton
+                  title={isSubmitting ? "Sending..." : "Let's talk"}
+                  icon={<FaLocationArrow />}
+                  position="right"
+                  handleClick={() => {}}
+                  otherClasses={isSubmitting ? "opacity-50 cursor-not-allowed" : ""}
+                />
               </div>
             </form>
           </div>
