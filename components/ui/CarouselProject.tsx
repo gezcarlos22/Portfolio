@@ -1,10 +1,10 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { useState, useRef, useId, useEffect } from "react";
+import { useState, useRef, useId } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
-import Link from "next/link";
 import { projects2 } from "@/data";
 import Image from "next/image";
+import ProjectModal from "./ProjectModal";
 
 interface SlideData {
   title: string;
@@ -14,6 +14,11 @@ interface SlideData {
   category: string;
   iconLists: string[];
   link: string;
+  fullDescription?: string;
+  year?: string;
+  client?: string;
+  tools?: string[];
+  outcome?: string;
 }
 
 interface SlideProps {
@@ -21,56 +26,25 @@ interface SlideProps {
   index: number;
   current: number;
   handleSlideClick: (index: number) => void;
+  onModalOpen: (project: SlideData) => void;
 }
 
-const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
+const Slide = ({
+  slide,
+  index,
+  current,
+  handleSlideClick,
+  onModalOpen,
+}: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
 
-  const xRef = useRef(0);
-  const yRef = useRef(0);
-  const frameRef = useRef<number>();
-
-  useEffect(() => {
-    const animate = () => {
-      if (!slideRef.current) return;
-
-      const x = xRef.current;
-      const y = yRef.current;
-
-      slideRef.current.style.setProperty("--x", `${x}px`);
-      slideRef.current.style.setProperty("--y", `${y}px`);
-
-      frameRef.current = requestAnimationFrame(animate);
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
-
-  const handleMouseMove = (event: React.MouseEvent) => {
-    const el = slideRef.current;
-    if (!el) return;
-
-    const r = el.getBoundingClientRect();
-    xRef.current = event.clientX - (r.left + Math.floor(r.width / 2));
-    yRef.current = event.clientY - (r.top + Math.floor(r.height / 2));
-  };
-
-  const handleMouseLeave = () => {
-    xRef.current = 0;
-    yRef.current = 0;
-  };
-
-  const imageLoaded = (event: React.SyntheticEvent<HTMLImageElement>) => {
-    event.currentTarget.style.opacity = "1";
-  };
-
   const { img, title, id, des, iconLists, category } = slide;
+
+  const handleCardClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onModalOpen(slide);
+  };
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
@@ -78,8 +52,6 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         ref={slideRef}
         className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[90vmin] h-[140vmin] lg:w-[120vmin] md:h-[70vmin] lg:h-[50vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
         style={{
           transform:
             current !== index
@@ -89,7 +61,11 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           transformOrigin: "bottom",
         }}
       >
-        <Link href={slide.link} target="_blank" className="h-full ">
+        <button
+          onClick={handleCardClick}
+          className="h-full w-full cursor-pointer text-left"
+          type="button"
+        >
           <div
             className="card-zoom-animation overflow-hidden rounded-3xl rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1] group-hover/pin:border-white/[0.2] transition duration-700 overflow-hidden p-6 flex flex-col lg:flex-row h-full gap-6"
             style={{
@@ -167,7 +143,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
               </div>
             </div>
           </div>
-        </Link>
+        </button>
       </li>
     </div>
   );
@@ -203,6 +179,10 @@ interface CarouselProps {
 
 export function CarouselProject({ slides }: CarouselProps) {
   const [current, setCurrent] = useState(0);
+  const [selectedProject, setSelectedProject] = useState<SlideData | null>(
+    null,
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePreviousClick = () => {
     const previous = current - 1;
@@ -220,57 +200,79 @@ export function CarouselProject({ slides }: CarouselProps) {
     }
   };
 
+  const handleModalOpen = (project: SlideData) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+    setTimeout(() => setSelectedProject(null), 300);
+  };
+
   const id = useId();
 
   return (
-    <div
-      className="relative w-[90vmin] lg:w-[120vmin] h-[140vmin] md:h-[70vmin] lg:h-[50vmin] mx-auto "
-      aria-labelledby={`carousel-heading-${id}`}
-    >
-      <ul
-        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
-        style={{
-          transform: `translateX(-${current * (100 / slides.length)}%)`,
-        }}
+    <>
+      <div
+        className="relative w-[90vmin] lg:w-[120vmin] h-[140vmin] md:h-[70vmin] lg:h-[50vmin] mx-auto"
+        aria-labelledby={`carousel-heading-${id}`}
       >
-        {slides.map((slide, index) => (
-          <Slide
-            key={index}
-            slide={slide}
-            index={index}
-            current={current}
-            handleSlideClick={handleSlideClick}
-          />
-        ))}
-      </ul>
-
-      <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick}
-        />
-
-        <div className="flex justify-center items-center top-[calc(100%+4rem)] gap-2 px-2">
-          {slides.map((_, index) => (
-            <button
+        <ul
+          className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
+          style={{
+            transform: `translateX(-${current * (100 / slides.length)}%)`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <Slide
               key={index}
-              onClick={() => handleSlideClick(index)}
-              className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                current === index ? "bg-purple scale-125" : "bg-neutral-400/50"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
+              slide={slide}
+              index={index}
+              current={current}
+              handleSlideClick={handleSlideClick}
+              onModalOpen={handleModalOpen}
             />
           ))}
-        </div>
+        </ul>
 
-        <CarouselControl
-          type="next"
-          title="Go to next slide"
-          handleClick={handleNextClick}
-        />
+        <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
+          <CarouselControl
+            type="previous"
+            title="Go to previous slide"
+            handleClick={handlePreviousClick}
+          />
+
+          <div className="flex justify-center items-center top-[calc(100%+4rem)] gap-2 px-2">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => handleSlideClick(index)}
+                className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                  current === index
+                    ? "bg-purple scale-125"
+                    : "bg-neutral-400/50"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <CarouselControl
+            type="next"
+            title="Go to next slide"
+            handleClick={handleNextClick}
+          />
+        </div>
       </div>
-    </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        project={selectedProject}
+        onClose={handleModalClose}
+      />
+    </>
   );
 }
 

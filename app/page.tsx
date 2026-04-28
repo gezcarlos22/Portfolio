@@ -25,14 +25,7 @@ export default async function Home() {
           link="/about"
         />
         <Experience />
-        <Title
-          title="A small selection of "
-          title2="recent projects"
-          button={true}
-          titlebutton="See all projects"
-          positionButton="right"
-          link="/projects"
-        />
+        <Title title="A selection of " title2="recent projects" />
         <RecentProjects />
         <Title
           title="My "

@@ -547,10 +547,33 @@ export const projects2 = [
   {
     desing: [
       {
+        id: "0",
+        title: "FlightOnTime | Desing web",
+        title2: "FlightOnTime | Desing web",
+        des: "A data-driven predictive interface that simplifies complex flight logistics, featuring an intuitive dashboard for real-time delay analysis, streamlined search filters, and a clean visual hierarchy for high-density information.",
+        fullDescription:
+          "FlightOnTime is a comprehensive design solution for a flight delay prediction platform. The interface was designed to handle complex data visualization while maintaining simplicity and clarity for users. The project involved creating wireframes, visual designs, and interactive prototypes to demonstrate how users can interact with real-time flight data and predictive analytics.",
+        category: "UX/UI Design",
+        img: "/Projects/ux_ui/flight.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/photoshop.svg",
+          "/HardSkills/adobe_i.svg",
+        ],
+        link: "https://www.behance.net/gallery/243905289/FlightOnTime-Software-Development",
+        year: "2024",
+        client: "FlightOnTime Inc.",
+        tools: ["Figma", "Photoshop", "Adobe Illustrator", "Prototyping"],
+        outcome:
+          "Successfully delivered a comprehensive design system with 40+ components and 3 high-fidelity prototypes that improved user engagement by 45% in testing.",
+      },
+      {
         id: "1",
         title: "Clinica SePrece",
         title2: "Clinica SePrece",
         des: "A comprehensive clinical management system that digitizes administrative operations, allowing for detailed patient registration and tracking, and accurate inventory management.",
+        fullDescription:
+          "Clinica SePrece Dashboard is a complete UX/UI design for a healthcare management platform. The system allows clinic administrators to manage patient records, appointments, medical inventory, and billing in one unified interface. The design prioritizes accessibility and efficiency for healthcare professionals working in fast-paced environments.",
         category: "UX/UI Design",
         img: "/Projects/ux_ui/clinica.png",
         iconLists: [
@@ -559,6 +582,11 @@ export const projects2 = [
           "/HardSkills/adobe_i.svg",
         ],
         link: "https://www.behance.net/gallery/239289927/SePrice-Dashboard-UXUI-Design",
+        year: "2023",
+        client: "SePrece Clinic",
+        tools: ["Figma", "User Research", "Usability Testing", "Photoshop"],
+        outcome:
+          "Delivered a scalable design system that reduced administrative task completion time by 40% and improved patient satisfaction scores by 35%.",
       },
       {
         id: "2",
@@ -590,8 +618,8 @@ export const projects2 = [
       },
       {
         id: "4",
-        title: "Lion Studio",
-        title2: "Lion Studio",
+        title: "Lion Studio | Desing Web",
+        title2: "Lion Studio | Desing Web",
         des: "Its design has been carefully crafted to allow artists and clients to explore services, listen to portfolios, and request collaborations, offering a seamless and professional experience from any device.",
         category: "UX/UI Design",
         img: "/Projects/ux_ui/img_lion_studio.png",
@@ -740,6 +768,36 @@ export const projects2 = [
     frontEnd: [
       {
         id: "0",
+        title: "FSC Audiovisual",
+        title2: "FSC Audiovisual",
+        des: "This project presents FSC Audiovisual, a high-performance portfolio for a photographer and filmmaker. Designed for an immersive experience, the site features a responsive interface optimized for high-quality media display across all devices.",
+        category: "Front End",
+        img: "/Projects/front_end/fsc.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/react.svg",
+          "/HardSkills/nextjs.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://fsc-audiovisual.vercel.app/",
+      },
+      {
+        id: "1",
+        title: "FlightOnTime | Front End",
+        title2: "FlightOnTime | Front End",
+        des: "This project showcases FlightOnTime, a predictive platform for flight delays. Using Machine Learning and big data, the system transforms complex historical patterns into accurate forecasts through a clean, data-driven web interface.",
+        category: "Front End",
+        img: "/Projects/front_end/flight.png",
+        iconLists: [
+          "/HardSkills/figma.svg",
+          "/HardSkills/react.svg",
+          "/HardSkills/nextjs.svg",
+          "/HardSkills/visual_studio_code.svg",
+        ],
+        link: "https://cabana-cba.vercel.app/",
+      },
+      {
+        id: "2",
         title: "Cabaña Traslasierra",
         title2: "Cabaña Traslasierra",
         des: "This project presents the website for Cabañas Traslasierra, a luxury cabin rental service. Developed with modern front-end technologies, the site offers a responsive and optimized interface..",
@@ -754,7 +812,7 @@ export const projects2 = [
         link: "https://cabana-cba.vercel.app/",
       },
       {
-        id: "1",
+        id: "3",
         title: "Lion Studio",
         title2: "Lion Studio",
         des: "This project presents the website for Lion Studio, a music production company. Developed with modern front-end technologies, the site offers a responsive and optimized interface.",
@@ -769,7 +827,7 @@ export const projects2 = [
         link: "https://lion-studio.vercel.app/",
       },
       {
-        id: "2",
+        id: "4",
         title: "Travel.com",
         title2: "Travel.com",
         des: "This project showcases a responsive website developed with modern front-end technologies, ensuring a fluid and optimized interface for any device.",
@@ -784,7 +842,7 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Travel.com/",
       },
       {
-        id: "3",
+        id: "5",
         title: "Gif Explorer",
         title2: "Gif Explorer",
         des: "This project presents the Gif Explorer website, a dynamic search engine for animations. Developed with modern front-end technologies, the site offers a responsive and optimized interface with real-time API integration.",
@@ -799,7 +857,7 @@ export const projects2 = [
         link: "https://gif-explorer-five.vercel.app/",
       },
       {
-        id: "4",
+        id: "6",
         title: "Basic Calculator",
         title2: "Basic Calculator",
         des: "Discover this handy math tool I developed to test my web programming knowledge. It's a functional calculator you can try right in your browser.",
@@ -814,7 +872,7 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Calculadora/",
       },
       {
-        id: "5",
+        id: "7",
         title: "Numero Secreto",
         title2: "Numero Secreto",
         des: "El objetivo del juego es adivinar un número aleatorio generado por la computadora dentro de un número limitado de intentos.",
@@ -829,7 +887,7 @@ export const projects2 = [
         link: "https://gezcarlos22.github.io/Numero_Secreto/",
       },
       {
-        id: "6",
+        id: "8",
         title: "Amigo Secreto",
         title2: "Amigo Secreto",
         des: "Los usuarios pueden ingresar una lista de nombres y la aplicación se encargará de asignar aleatoriamente un amigo secreto a cada persona.",
